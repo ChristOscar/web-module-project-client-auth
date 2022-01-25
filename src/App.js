@@ -6,38 +6,25 @@ import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import Login from './components/Login';
 import FriendsList from './components/FriendsList';
 import LogOut from './components/Logout';
-import AddFriends from './components/AddFriends';
+import AddFriend from './components/AddFriend';
+import PrivateRoute from './components/PrivateRoute';
+import Header from './components/Header';
 
 
 function App() {
-
-  
   return (
     <Router>
+      <Header />
       <div className="App">
-        <ul>
-          <h1>User Authorization</h1>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/hiddenFriend">Friends List</Link>
-          </li>
-          <li>
-            <Link to="/hiddenAdd">Add Friends</Link>
-          </li>
-          <li>
-            <Link to="/logout">Logout</Link>
-          </li>
-        </ul>
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/" component={Login} />
-          <Route path="/hiddenFriend" component={FriendsList} />
-          <Route path="/hiddenAdd" component={AddFriends} />
-          <Route path="/logout" component={LogOut} />
-        </Switch>
+        <h2>Client Auth Project</h2>
       </div>
+      <Switch>
+        <PrivateRoute exact path='/friends/add' component={AddFriend} />
+        <PrivateRoute exact path='/friends' component={FriendsList} />
+        <Route path='/logout' component={LogOut} />
+        <Route path='/login' component={Login} />
+        <Route path='/' component={Login} />
+      </Switch>
     </Router>
   );
 }

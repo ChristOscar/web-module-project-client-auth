@@ -61,14 +61,14 @@ Each friend object has the format:
 * [x] In `App.js`, add a route to allow this component to be displayed when navigating to `/friends/add`.
 
 #### Build a logout button
-* [ ] Build out a simple component allowing you to logout of your application cleanly.
+* [x] Build out a simple component allowing you to logout of your application cleanly.
 * [ ] The component should make a call to the logout endpoint and remove the token on local storage by default.
 * [x] In `App.js`, add a route to allow this component to be displayed when navigating to `/logout`.
 * [x] In `App.js`, create a navigation bar that allows the user to redirect to logout, friendslist or add friend.
 
 #### Build the a PrivateRoute component
-* [ ] Create a `<PrivateRoute />` component to protect your other routes. It should check localStorage for a token, and redirect the user to your login route if there is not a token.
-* [ ] Use your protected route to restrict access to your `/friends` and `/friends/add` routes.
+* [x] Create a `<PrivateRoute />` component to protect your other routes. It should check localStorage for a token, and redirect the user to your login route if there is not a token.
+* [x] Use your protected route to restrict access to your `/friends` and `/friends/add` routes.
 
 ### Task 3: Stretch goals
 - [ ] Add in a modularized way to access protected endpoints using axiosWithAuth.
